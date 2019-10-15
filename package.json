@@ -4,13 +4,13 @@
   "description": "eightsins-official-website",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fatb38/eightsins-official-website.git"
+    "url": "https://github.com/fatb38/eightsins-website.git"
   },
   "keywords": [
     "eightsins"
   ],
   "author": "fatb38",
-  "homepage": "https://github.com/fatb38/eightsins#readme",
+  "homepage": "https://github.com/fatb38/eightsins-website#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
