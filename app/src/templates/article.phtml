@@ -1,0 +1,16 @@
+<article id="article">
+    <h1><?= htmlspecialchars($news['title']) ?></h1>
+    <?php if ($news['image'] !== null): ?>
+        <img src="assets/images/news/<?= htmlspecialchars($news['image']) ?>"
+             alt="<?= htmlspecialchars($news['title']) ?>"
+             title="<?= htmlspecialchars($news['title']) ?>">
+    <?php endif ?>
+    <div class="content clearFix"><?= ($news['content']) ?></div>
+    <?php if ($news['iframe_link'] !== null): ?>
+        <iframe class="" width="560" height="315" src="<?= htmlspecialchars($news['iframe_link']) ?>" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; Transparency"
+                ></iframe>
+
+    <?php endif ?>
+    <a class="button-link" href="news.php#<?= $news['id'] ?>">Retour aux news</a>
+</article>

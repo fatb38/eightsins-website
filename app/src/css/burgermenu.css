@@ -1,0 +1,174 @@
+#main-nav {
+    line-height: 2.2;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 94px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: all 0.4s;
+    border-bottom: 1px solid #ffffff73;
+    z-index: 10;
+}
+
+#main-nav.opened {
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+#burger-button {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.burger-menu-icon {
+    width: 20px;
+    height: 1px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.top-line.opened {
+    transform: translateY(6px) rotate(-45deg);
+}
+
+.middle-line.opened {
+    opacity: 0;
+}
+
+.bottom-line.opened {
+    transform: translateY(-6px) rotate(45deg);
+}
+
+#main-logo img {
+    width: 200px;
+    height: auto;
+    vertical-align: middle;
+    padding: 10px 0;
+    transition: all 0.4s;
+    border: none;
+}
+
+.menu-list {
+    border-top: 1px solid white;
+    padding: 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 0.6s;
+    /** Test police DeathRattle **/
+    font-family: "DeathRattle BB", sans-serif;
+    font-size: 2.7rem;
+    letter-spacing: 1px;
+}
+
+.menu-list.opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-link:hover {
+    /*margin: 5px 0; --> Test DeathRattle*/
+    animation: shake 0.2s;
+}
+
+.menu-link a {
+    padding: 10px 50px;
+    transition: color 0.2s;
+}
+
+.menu-link a:hover {
+    color: #9c2685;
+}
+
+.menu-link a.active-tab {
+    color: #9c2685;
+}
+
+
+/*---------------------RESPONSIVE---------------------*/
+
+/****** Mobile Only ******/
+@media (max-width: 767px) {
+    #main-logo img.tiny {
+        width: 120px;
+        padding: 2px 0;
+    }
+    #main-nav.tiny {
+        height: 48px;
+    }
+    .menu-list {
+        height: 0;
+    }
+}
+
+/****** Tablet Only ******/
+@media (min-width: 768px) and (max-width: 1023px){
+    #main-logo img.tiny {
+        display: none;
+    }
+    #main-nav.tiny {
+        padding-bottom: 0;
+    }
+    header #main-nav.tiny + main#main-wrapper {
+        margin-top: 0;
+    }
+}
+
+/****** Tablet breakpoint ******/
+@media (min-width: 768px) {
+    #burger-button {
+        display: none;
+    }
+    #main-nav {
+        height: auto;
+    }
+    #main-logo img {
+        width: 280px;
+    }
+    .menu-list {
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        padding: 0;
+        /*width: 80%; test DeathRattle */
+        margin: 0 30px;
+    }
+    .menu-list ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu-link a {
+        padding: 10px 0;
+    }
+}
+
+/****** Desktop Breakpoint ******/
+@media (min-width: 1024px) {
+    #main-nav {
+        position: inherit;
+    }
+    #main-logo {
+        position: absolute;
+        left: calc(50% - 160px);
+        top: 10px;
+    }
+    #main-logo img {
+        width: 320px;
+    }
+    
+    .menu-list { /* Test DeathRattle */
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .menu-list ul {
+        height: 150px;
+    }
+    .menu-link:nth-child(4) {
+        margin-right: 280px;
+    }
+}

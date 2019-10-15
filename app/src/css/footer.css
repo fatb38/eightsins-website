@@ -1,0 +1,51 @@
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+}
+
+footer::before {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #ffffff73;
+    width: 100%;
+}
+
+.social-nav{
+    margin: 24px 0 10px 0;
+}
+
+.social-nav a {
+    padding: 8px;
+}
+
+.social-nav .font-icon {
+    font-size: 2rem;
+    transition: color 0.2s;
+}
+
+.font-icon:hover {
+    color: #9c2685;
+}
+
+.credits {
+    color: #bfbfbf;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/****** Responsive Tablet ******/
+
+@media (min-width: 768px) {
+    .social-nav a {
+        margin: 5px;
+    }
+    .social-nav .font-icon {
+        font-size: 2.2rem;
+    }
+    .credits {
+        font-size: 1.2rem;
+    }
+}

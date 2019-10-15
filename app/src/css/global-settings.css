@@ -1,0 +1,115 @@
+/****** GLOBAL SETTINGS ******/
+
+@font-face {
+    font-family: 'DeathRattle BB';
+    font-style: normal;
+    font-weight: normal;
+    src: local('DeathRattle BB'), url('font/deathrattlebb_reg.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body { /* Pour positionner le footer toujours en bas de page */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /*62.5% de 16px = 10 px*/
+    /*scroll-behavior: smooth;*/
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    /* Pour positionner le footer toujours en bas de page */
+    display: table;
+    width: 100%;
+}
+
+footer {
+    display: table-row;
+    height: 88px;
+}
+
+h1, h2 {
+    color: #696969;
+    font-family: 'DeathRattle BB', cursive;
+    font-weight: normal;
+    font-size: 4rem;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: lighter;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    border: 1px solid #ffffff73;
+}
+
+/****** Generic Classes ******/
+
+.animate {
+    transition: all 0.4s;
+}
+
+.hide {
+    display: none;
+}
+
+.repairFlux {
+    display: block;
+    clear: both;
+}
+
+.clearFix::after {
+    content: '';
+    display: block;
+    clear: both;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/******* BUTTONS ******/
+.button-link {
+    transition: all 0.2s;
+    color: #cab782;
+    margin-bottom: 15px;
+}
+
+.button-link::after {
+    content: '\f30b';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: text-bottom;
+    margin-left: 5px;
+}
+
+.button-link:hover {
+    color: #8e7222;
+}

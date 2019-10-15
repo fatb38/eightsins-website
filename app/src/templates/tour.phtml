@@ -1,0 +1,39 @@
+<section id="tour-section">
+    <h1>Tour dates</h1>
+    <article>
+        <h3>UPCOMING SHOWS</h3>
+        <?php foreach ($upcomingDates as $date): ?>
+            <div class="show">
+                <div class="show-info">
+                    <div><?= strftime("%a %d %B", date_timestamp_get(date_create($date->datetime))) ?></div>
+                    <div>
+                        <span class="venue"><?= $date->venue->name ?></span>
+                        <?php if (count($date->lineup) > 1): ?>
+                            <br><span class="lineup">w/
+                            <?php for ($index = 1; $index < count($date->lineup); $index++): ?>
+                                <?= $date->lineup[$index] ?></span>
+                            <?php endfor ?>
+                        <?php endif ?>
+                    </div>
+                    <div><?= $date->venue->city ?>, <?= $date->venue->country ?></div>
+                </div>
+                <div class="show-link">
+                    <a href="<?= $date->url ?>">More info</a>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </article>
+    <article class="past-shows-list">
+        <h3>PAST SHOWS</h3>
+        <?php foreach (array_reverse($pastDates) as $date): ?>
+            <?php if($currentYear === getYear($date->datetime)): ?>
+                <h4><?= $currentYear ?></h4><?php $currentYear-- ?>
+            <?php endif ?>
+            <span class="past-show">
+                <span><?= strftime("%d %b", date_timestamp_get(date_create($date->datetime))) ?></span>
+                <span><?= $date->venue->name ?></span>
+                <span><?= $date->venue->city ?>, <?= $date->venue->country ?></span>
+            </span>
+        <?php endforeach ?>
+    </article>
+</section>
