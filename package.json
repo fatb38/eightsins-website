@@ -28,6 +28,6 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "ckeditor": "^4.12.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
