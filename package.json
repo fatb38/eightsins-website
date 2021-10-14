@@ -1,6 +1,6 @@
 {
   "name": "eightsins-official-website",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "eightsins-official-website",
   "repository": {
     "type": "git",
@@ -22,8 +22,7 @@
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
-    "load-grunt-tasks": "^5.1.0",
-    "node-sass": "^4.12.0"
+    "load-grunt-tasks": "^5.1.0"
   },
   "dependencies": {
     "bulma": "^0.7.5",
