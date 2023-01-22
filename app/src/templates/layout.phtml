@@ -1,96 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title><?= $pageTitle ?></title>
-    <meta name="description" content="Eight Sins - Thrash Metal Hardcore band from France (Grenoble). New EP It's a Trap available worldwide !!" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="canonical" href="https://www.eightsins.fr/">
-    <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=8jMYrOngOg">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png?v=8jMYrOngOg">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png?v=8jMYrOngOg">
-    <link rel="manifest" href="assets/favicon/site.webmanifest?v=8jMYrOngOg">
-    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg?v=8jMYrOngOg" color="#8a0f2c">
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico?v=8jMYrOngOg">
-    <meta name="apple-mobile-web-app-title" content="Eight Sins">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Eight Sins">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#000000">
-    <!--Open Graph -->
-    <meta property="og:url" content="https://www.eightsins.fr">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Eight Sins Official Website">
-    <meta property="og:description" content="Thrash Metal Hardcore band from France (Grenoble). Tour dates, last news, music, videos here !!" />
-    <meta property="og:image" content="https://www.eightsins.fr/assets/images/8sinsbackground.jpg">
-    <!--Fonts & CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Kalam:300|Source+Sans+Pro:300&display=swap" rel="stylesheet">
-<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"-->
-<!--          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
-<!--    <link rel="stylesheet" href="../src/css/normalize.css">-->
-<!--    <link rel="stylesheet" href="../src/css/global-settings.css">-->
-<!--    <link rel="stylesheet" href="../src/css/animations.css">-->
-<!--    <link rel="stylesheet" href="../src/css/burgermenu.css">-->
-<!--    <link rel="stylesheet" href="../src/css/main-content.css">-->
-<!--    <link rel="stylesheet" href="../src/css/footer.css">-->
-<!--    <link rel="stylesheet" href="../release/main.css">-->
+  <meta charset="UTF-8">
+  <title><?= $pageTitle ?></title>
+  <meta name="description" content="<?= $metaDescription ?>">
+  <meta name="keywords" content="<?= $metaKeywords ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="canonical" href="<?= $canonicalUrl ?>">
+  <!--Favicons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=8jMYrOngOg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png?v=8jMYrOngOg">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png?v=8jMYrOngOg">
+  <link rel="manifest" href="assets/favicon/site.webmanifest?v=8jMYrOngOg">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg?v=8jMYrOngOg" color="#8a0f2c">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico?v=8jMYrOngOg">
+  <meta name="apple-mobile-web-app-title" content="Eight Sins">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Eight Sins">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#000000">
+  <!--Open Graph -->
+  <meta property="og:url" content="https://www.eightsins.fr">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eight Sins Official Website">
+  <meta property="og:description"
+        content="Thrash Metal Hardcore band from France (Grenoble). Tour dates, last news, music, videos here !!"/>
+  <meta property="og:image" content="https://www.eightsins.fr/assets/images/8sinsbackground.jpg">
+  <!--Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Kalam:300|Source+Sans+Pro:300&display=swap" rel="stylesheet">
+  <?php if (getenv('ENV') === 'dev'): ?>
+    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/global-settings.css">
+    <link rel="stylesheet" href="../src/css/animations.css">
+    <link rel="stylesheet" href="../src/css/burgermenu.css">
+    <link rel="stylesheet" href="../src/css/main-content.css">
+    <link rel="stylesheet" href="../src/css/footer.css">
+  <?php else: ?>
     <link rel="stylesheet" href="assets/css/main.min.css">
-    <?php if ($template === 'welcome'): ?>
-        <?= '<link rel="stylesheet" href="assets/css/welcome-page.css">' ?>
-    <?php endif ?>
+  <?php endif ?>
+  <?php if ($template === 'welcome'): ?>
+    <?= '<link rel="stylesheet" href="assets/css/welcome-page.css">' ?>
+  <?php endif ?>
 </head>
 <body>
 <header>
-    <nav id="main-nav">
-        <ul class="nav-header">
-            <li id="burger-button">
-                <div class="burger-menu-icon top-line"></div>
-                <div class="burger-menu-icon middle-line"></div>
-                <div class="burger-menu-icon bottom-line"></div>
-            </li>
-            <li id="main-logo">
-                <a href="index.php"><img src="assets/images/logoHD.png" alt="EIGHT SINS" title="EIGHT SINS"></a>
-            </li>
-            <li class="menu-list">
-                <ul>
-                    <li class="menu-link"><a href="welcome.php">WELCOME</a></li>
-                    <li class="menu-link"><a href="news.php">NEWS</a></li>
-                    <li class="menu-link"><a href="band.php">BAND</a></li>
-                    <li class="menu-link"><a href="tour.php">TOUR</a></li>
-                    <li class="menu-link"><a href="music.php">MUSIC</a></li>
-                    <li class="menu-link"><a href="video.php">VIDEO</a></li>
-                    <li class="menu-link"><a href="merch.php">MERCH</a></li>
-                    <li class="menu-link"><a href="contact.php">CONTACT</a></li>
-                </ul>
-            </li>
+  <nav id="main-nav">
+    <ul class="nav-header">
+      <li id="burger-button">
+        <div class="burger-menu-icon top-line"></div>
+        <div class="burger-menu-icon middle-line"></div>
+        <div class="burger-menu-icon bottom-line"></div>
+      </li>
+      <li id="main-logo">
+        <a href="index.php"><img src="assets/images/logoHD.png" alt="EIGHT SINS" title="EIGHT SINS"></a>
+      </li>
+      <li class="menu-list">
+        <ul>
+          <li class="menu-link"><a href="index.php">WELCOME</a></li>
+          <li class="menu-link"><a href="news.php">NEWS</a></li>
+          <li class="menu-link"><a href="band.php">BAND</a></li>
+          <li class="menu-link"><a href="tour.php">TOUR</a></li>
+          <li class="menu-link"><a href="music.php">MUSIC</a></li>
+          <li class="menu-link"><a href="video.php">VIDEO</a></li>
+          <li class="menu-link"><a href="merch.php">MERCH</a></li>
+          <li class="menu-link"><a href="contact.php">CONTACT</a></li>
         </ul>
-    </nav>
+      </li>
+    </ul>
+  </nav>
 </header>
 <main id="main-wrapper">
-    <?php include "$template.phtml" ?>
-    <div id="scroll-to-top-button"><i class="fas fa-arrow-up"></i></div>
+  <?php include "$template.phtml" ?>
+  <div id="scroll-to-top-button"><i class="fas fa-arrow-up"></i></div>
 </main>
 <footer>
-    <nav class="social-nav">
-        <a href="https://facebook.com/eightsins" target="_blank" rel="noopener"><i class="fab fa-facebook-square font-icon"></i></a>
-        <a href="https://instagram.com/eightsinshxc" target="_blank" rel="noopener"><i class="fab fa-instagram font-icon"></i></a>
-        <a href="https://twitter.com/eightsins" target="_blank" rel="noopener"><i class="fab fa-twitter font-icon"></i></a>
-        <a href="https://www.youtube.com/channel/UCqKTbXI3Ycq9Ij-bKVi7tRQ" target="_blank" rel="noopener">
-            <i class="fab fa-youtube font-icon"></i>
-        </a>
-    </nav>
-    <p class="credits">Eight Sins <?= date_format(date_create('now'), 'Y') ?> © - All Rights Reserved.</p>
+  <nav class="social-nav">
+    <a href="https://facebook.com/eightsins" target="_blank" rel="noopener"><i
+        class="fab fa-facebook-square font-icon"></i></a>
+    <a href="https://instagram.com/eightsinshxc" target="_blank" rel="noopener"><i
+        class="fab fa-instagram font-icon"></i></a>
+    <a href="https://twitter.com/eightsins" target="_blank" rel="noopener"><i class="fab fa-twitter font-icon"></i></a>
+    <a href="https://www.youtube.com/channel/UCqKTbXI3Ycq9Ij-bKVi7tRQ" target="_blank" rel="noopener">
+      <i class="fab fa-youtube font-icon"></i>
+    </a>
+  </nav>
+  <p class="credits">Eight Sins <?= date_format(date_create('now'), 'Y') ?> © - All Rights Reserved.</p>
 </footer>
-<!--<script src="../src/js/utilities.js"></script>-->
-<!--<script src="../src/js/ajax.js"></script>-->
-<!--<script src="../src/js/Classes/DiscographyInformations.js"></script>-->
-<!--<script src="../src/js/Classes/BurgerMenu.js"></script>-->
-<!--<script src="../src/js/Classes/MembersIdentificator.js"></script>-->
-<!--<script src="../src/js/Classes/MerchPage.js"></script>-->
-<!--<script src="../src/js/main.js"></script>-->
-<!--<script src="../release/main.js"></script>-->
-<script src="assets/js/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<?php if (getenv('ENV') === 'dev'): ?>
+  <script src="../src/js/utilities.js"></script>
+  <script src="../src/js/Classes/DiscographyInformations.js"></script>
+  <script src="../src/js/Classes/BurgerMenu.js"></script>
+  <script src="../src/js/Classes/MembersIdentificator.js"></script>
+  <script src="../src/js/Classes/MerchPage.js"></script>
+  <script src="../src/js/main.js"></script>
+<?php else: ?>
+  <script src="assets/js/main.min.js"></script>
+<?php endif ?>
 </body>
 </html>

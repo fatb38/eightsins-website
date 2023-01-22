@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-7.4
+    volumes:
+      - ./app:/var/www/html/
+    ports:
+      - '8001:80'
+    environment:
+      - ALLOW_OVERRIDE=true
+  db:
+    container_name: mysql-8.0
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: eightsins
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+    volumes:
+      - database:/var/lib/mysql
+    ports:
+      - '3306:3306'
+  phpmyadmin:
+    container_name: phpmyadmin-5.2
+    image: arm64v8/phpmyadmin:5.2-apache
+    links:
+      - db:db
+    ports:
+      - '8000:80'
+    environment:
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+      MYSQL_ROOT_PASSWORD: root_pass
+volumes:
+  database:

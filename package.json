@@ -1,32 +1,45 @@
 {
   "name": "eightsins-official-website",
-  "version": "1.2.1",
+  "version": "1.5.1",
   "description": "eightsins-official-website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fatb38/eightsins-website.git"
+    "url": "git+https://github.com/fatb38/eightsins.git"
   },
+  "private": true,
   "keywords": [
-    "eightsins"
+    "eightsins",
+    "official",
+    "website",
+    "music",
+    "metal",
+    "grenoble"
   ],
   "author": "fatb38",
-  "homepage": "https://github.com/fatb38/eightsins-website#readme",
+  "scripts": {
+    "build": "grunt build-assets && npm run clean",
+    "clean": "rm -rf app/release",
+    "lint": "eslint .",
+    "lint-fix": "npm run lint -- --fix",
+    "watch-css": "grunt watch"
+  },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "grunt": "^1.0.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "bulma": "^0.9.3",
+    "eslint": "^8.26.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "grunt": "^1.4.1",
     "grunt-babel": "^8.0.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
-    "load-grunt-tasks": "^5.1.0"
-  },
-  "dependencies": {
-    "bulma": "^0.7.5",
-    "ckeditor": "^4.12.1",
-    "jquery": "^3.4.1"
+    "load-grunt-tasks": "^5.1.0",
+    "sass": "^1.55.0"
   }
 }

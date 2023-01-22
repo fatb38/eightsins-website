@@ -75,7 +75,7 @@
 }
 
 .menu-link a {
-    padding: 10px 50px;
+    padding: 5px 50px;
     transition: color 0.2s;
 }
 
@@ -159,12 +159,12 @@
     #main-logo img {
         width: 320px;
     }
-    
+
     .menu-list { /* Test DeathRattle */
         width: 90%;
         margin: 0 auto;
     }
-    
+
     .menu-list ul {
         height: 150px;
     }

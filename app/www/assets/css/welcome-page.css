@@ -1,0 +1,65 @@
+body {
+    background: transparent url("../images/welcomebg.jpg") no-repeat center/cover;
+    color: white;
+    text-shadow: 2px 1px 2px black;
+}
+
+#main-nav {
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: unset;
+    border-bottom: none;
+}
+
+footer {
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: unset;
+}
+
+footer::before {
+    display: none;
+}
+
+h1 {
+    font-family: 'DeathRattle BB', sans-serif;
+    color: white;
+    font-size: 3.4rem;
+    font-weight: normal;
+    position: absolute;
+    left: calc(50% - 36px);
+    transition: all 0.2s;
+}
+
+h1:hover {
+    color: #9c2685;
+    /*font-weight: bold;*/
+    /*transform: scale(1.2);*/
+    animation: shake 0.2s;
+}
+
+/** Video en background **/
+video#bgvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: transparent url("../images/welcomebg.jpg") no-repeat center/cover;
+}
+
+
+/** responsive **/
+@media (min-width: 768px) {
+    h1 {
+        display: none;
+    }
+}
+
+@media (max-width: 1079px) {
+    #bgvideo {
+        display: none;
+    }
+}

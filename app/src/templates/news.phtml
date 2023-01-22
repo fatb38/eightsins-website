@@ -1,5 +1,5 @@
 <section id="news-section">
-    <h1>News</h1>
+    <h1>EIGHT SINS NEWS</h1>
     <?php foreach ($allNews as $news): ?>
         <article id="<?= $news['id'] ?>" class="news" data-id="<?= $news['id'] ?>">
             <div class="image"><?php if ($news['image'] !== null): ?>
@@ -11,7 +11,7 @@
             </div>
             <div class="title">
                 <h3><?= htmlspecialchars($news['title']) ?></h3>
-                <span><?= strftime("%d %B %Y", date_timestamp_get(date_create($news['created_at']))); ?></span>
+                <span class="date"><?= strftime("%d %B %Y", date_timestamp_get(date_create($news['created_at']))); ?></span>
             </div>
             <div class="clearFix">
                 <div class="content"><?= $news['content'] ?></div>

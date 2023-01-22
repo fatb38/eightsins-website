@@ -1,4 +1,7 @@
 .idea
 node_modules
-/app/admin/
-/app/release/
+app/src/config/DatabaseServer.php
+app/src/config/DatabaseLocal.php
+app/release/
+app/www/assets/js
+app/www/assets/css/main.min.css

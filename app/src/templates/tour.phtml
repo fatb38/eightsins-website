@@ -1,18 +1,22 @@
 <section id="tour-section">
-    <h1>Tour dates</h1>
+    <h1>EIGHT SINS TOUR DATE</h1>
     <article>
         <h3>UPCOMING SHOWS</h3>
+        <?php if (empty($upcomingDates)): ?>
+            <span style="font-style: italic">No upcoming shows...</span>
+        <?php endif ?>
         <?php foreach ($upcomingDates as $date): ?>
             <div class="show">
                 <div class="show-info">
-                    <div><?= strftime("%a %d %B", date_timestamp_get(date_create($date->datetime))) ?></div>
-                    <div>
-                        <span class="venue"><?= $date->venue->name ?></span>
+                    <div class="show-date"><?= strftime("%a %d %B", date_timestamp_get(date_create($date->datetime))) ?></div>
+                    <div class="venue">
+                        <span class="venue-name"><?= $date->venue->name ?></span>
                         <?php if (count($date->lineup) > 1): ?>
                             <br><span class="lineup">w/
                             <?php for ($index = 1; $index < count($date->lineup); $index++): ?>
-                                <?= $date->lineup[$index] ?></span>
+                                <?= $date->lineup[$index] ?><?= $index + 1 == count($date->lineup) ? null : ',' ?>
                             <?php endfor ?>
+                            </span>
                         <?php endif ?>
                     </div>
                     <div><?= $date->venue->city ?>, <?= $date->venue->country ?></div>
@@ -25,9 +29,10 @@
     </article>
     <article class="past-shows-list">
         <h3>PAST SHOWS</h3>
-        <?php foreach (array_reverse($pastDates) as $date): ?>
+        <?php foreach ($pastDates as $date): ?>
             <?php if($currentYear === getYear($date->datetime)): ?>
-                <h4><?= $currentYear ?></h4><?php $currentYear-- ?>
+                <h4><?= $currentYear ?></h4>
+                <?php $currentYear-- ?>
             <?php endif ?>
             <span class="past-show">
                 <span><?= strftime("%d %b", date_timestamp_get(date_create($date->datetime))) ?></span>
@@ -35,5 +40,6 @@
                 <span><?= $date->venue->city ?>, <?= $date->venue->country ?></span>
             </span>
         <?php endforeach ?>
+        <p class="italic">And more dates since 2006...</p>
     </article>
 </section>
