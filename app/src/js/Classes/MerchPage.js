@@ -47,7 +47,7 @@ class MerchPage {
       <li class="item" id="${item.id}">
         <figure>
           <a href="https://eightsins.bigcartel.com${item.url}" target="_blank" rel="noopener">
-            <img src="${item.images['0'].url}?w=250" alt="${item.name}" title="${item.name}">
+            <img src="${item.images['0'].url}?w=250" alt="${item.name}" title="${item.name}" class="highlight-image-hover">
           </a>
           <figcaption>
             <h3>${item.name}</h3>
@@ -57,18 +57,18 @@ class MerchPage {
         </figure>
       </li>
     `
-
-    if (item.options.length > 1) {
-      let asideContent = '<p>Options disponibles :</p>'
-      item.options.forEach((option) => {
-        if (!option.sold_out) {
-          asideContent += `<span>${option.name}</span>`
-        }
-      })
-      const aside = document.createElement('aside')
-      aside.innerHTML = asideContent
-      document.getElementById(item.id).appendChild(aside)
-    }
+    // Disabling option fot the moment because bigcartel free plan don't allow options quantities
+    // if (item.options.length > 1) {
+    //   let asideContent = '<p>Options disponibles :</p>'
+    //   item.options.forEach((option) => {
+    //     if (!option.sold_out) {
+    //       asideContent += `<span>${option.name}</span>`
+    //     }
+    //   })
+    //   const aside = document.createElement('aside')
+    //   aside.innerHTML = asideContent
+    //   document.getElementById(item.id).appendChild(aside)
+    // }
   }
 
   filterItems (categoryId = 'all') {

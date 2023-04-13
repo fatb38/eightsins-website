@@ -1,757 +1,773 @@
 /****** LAYOUT MAIN CONTENT ******/
 
 #main-wrapper {
-    margin: 110px 15px 20px 15px;
+  margin: 110px 15px 20px 15px;
+}
+
+#content-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 #scroll-to-top-button {
-    position: fixed;
-    color: #fffc;
-    bottom: 20px;
-    right: 20px;
-    font-size: 2rem;
-    width: 35px;
-    height: 35px;
-    background-color: #c6c6c678;
-    border-radius: 4px;
-    line-height: 3.5rem;
-    cursor: pointer;
-    visibility: hidden;
-    transform: scale(0);
-    opacity: 0;
-    transition: 0.2s;
+  position: fixed;
+  color: #fffc;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  width: 35px;
+  height: 35px;
+  background-color: #c6c6c678;
+  border-radius: 4px;
+  line-height: 3.5rem;
+  cursor: pointer;
+  visibility: hidden;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.2s;
 }
 
 #scroll-to-top-button.show {
-    visibility: visible;
-    transform: scale(1);
-    opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
 }
 
 #scroll-to-top-button:hover {
-    background-color: #86858578;
+  background-color: #86858578;
 }
 
 .date {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.6rem;
-    color: #bfbfbf;
-    font-family: serif;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.6rem;
+  color: #bfbfbf;
+  font-family: serif;
 }
 
 .spinning-loader {
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 24px);
-    width: 48px;
-    height: 48px;
-    border: 4px solid #FFF;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  border: 4px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
 /*----------------NEWS PAGE---------------------*/
 
 .news {
-    text-align: left;
+  text-align: left;
 }
 
-.news h3 {
-    color: #cab782;
-    margin-bottom: 5px;
+.title h3 {
+  color: #cab782;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 2.2rem;
 }
 
-.news span:after, .news span:before {
-    content: ' - ';
+.news .date:after, .news .date:before {
+  content: ' - ';
 }
 
 .news .content {
-    margin: 20px 0;
-}
-
-.news .readmore {
-    transition: all 0.2s;
-    color: #cab782;
-}
-
-.news .readmore::after {
-    content: '\f30b';
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: text-bottom;
-    margin-left: 5px;
-}
-
-.news .readmore:hover {
-    color: #8e7222;
+  margin: 10px 0;
 }
 
 .news hr {
-    margin-top: 20px;
-    width: 100%;
-    color: #bfbfbf;
+  margin-block: 24px;
+  width: 100%;
+  color: #bfbfbf;
 }
 
 .news:last-of-type hr {
+  display: none;
+}
+
+.news img:hover {
+  filter: grayscale(0.3);
+  opacity: 0.8;
+  transition: all 0.2s
+}
+
+@media (min-width: 768px) {
+  #news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .news {
+    width: calc(50% - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 24px 40px 24px;
+  }
+
+  .news img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .news hr {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .news {
+    width: calc(33.33% - 48px);
+  }
 }
 
 /*----------------ARTICLE PAGE---------------------*/
-#article :not(iframe) {
-    text-align: left;
+#article {
+  text-align: left;
 }
 
-#article .content a {
-    font-style: italic;
-    color: #cab782;
+#article .title {
+  margin-block: 24px;
 }
 
-#article .button-link {
-    display: block;
-    text-align: right;
-    margin-top: 30px;
+#article a {
+  font-style: italic;
+  color: #cab782;
+}
+
+#article .back-link {
+  text-align: right;
+  margin-top: 24px;
 }
 
 #article h1 {
-    color: #cab782;
-    font-family: inherit;
-    font-size: 3rem;
-    margin-bottom: 5px;
+  color: #cab782;
+  font-family: inherit;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 #article h2, #article h3, #article h4 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-family: inherit;
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: inherit;
+}
+
+#article .date:after, #article .date:before {
+  content: ' - ';
+}
+
+@media (min-width: 768px) {
+  #article {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #article-content-wrapper {
+    display: flex;
+  }
+
+  #article-content-wrapper img {
+    max-width: 400px;
+    object-fit: cover;
+  }
+
+  #article-content-wrapper .content {
+    padding: 0 32px;
+  }
+
+  #article-content-wrapper .content p {
+    margin-top: 0;
+  }
 }
 
 /*----------------BAND PAGE---------------------*/
 
+#band {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 #band article :not(h2) {
-    text-align: justify;
+  text-align: justify;
 }
 
 #members-identification {
-    max-width: 1200px;
+  max-width: 1200px;
 }
 
 #members {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .member strong {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .member span {
-    font-style: italic;
-    color: #cab782;
+  font-style: italic;
+  color: #cab782;
 }
 
 #biography {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 #biography h2 span {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 #biography p {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .member::after {
-    content: '';
-    width: 0;
-    display: block;
-    left: 50%;
-    position: relative;
-    border-bottom: 2px solid #cab782;
-    transform: translateY(2px);
-    border-radius: 2px;
+  content: '';
+  width: 0;
+  display: block;
+  left: 50%;
+  position: relative;
+  border-bottom: 2px solid #cab782;
+  transform: translateY(2px);
+  border-radius: 2px;
 }
 
 #jambon-text.hover-face::after,
 #arno-text.hover-face::after,
 #lox-text.hover-face::after,
 #mike-text.hover-face::after {
-    animation: underline-border-bounce 1s linear;
-    left: 0;
-    width: 100%;
+  animation: underline-border-bounce 1s linear;
+  left: 0;
+  width: 100%;
 }
 
 /*--------------TOUR PAGE-------------------*/
 
+#tour-section {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 #tour-section h3 {
-    color: #cab782;
-    margin-bottom: 30px;
-    font-weight: lighter;
+  color: #cab782;
+  margin-bottom: 30px;
+  font-weight: lighter;
 }
 
 #tour-section .show {
-    text-align: left;
-    border-bottom: 1px solid rgba(210, 210, 210, 0.3);
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(210, 210, 210, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 20px;
 }
 
 
 #tour-section .show .show-info {
-    width: calc(100% - 110px);
+  width: calc(100% - 110px);
 }
 
 #tour-section .show .show-info div:not(:last-of-type) {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #tour-section .show .show-info .venue {
-    color: #9c2685;
-    font-weight: bold;
+  color: #9c2685;
+  font-weight: bold;
 }
 
 #tour-section .show .show-info .venue .venue-name {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #tour-section .show .show-info .lineup {
-    color: #c6c6c69e;
-    font-style: italic;
-    font-size: 14px;
+  color: #c6c6c69e;
+  font-style: italic;
+  font-size: 14px;
 }
 
 #tour-section .show .show-link {
-    width: 100px;
-    text-align: center;
-    align-self: center;
-    padding: 10px;
-    border: 1px solid;
-    transition: all 0.4s;
+  width: 100px;
+  text-align: center;
+  align-self: center;
+  padding: 10px;
+  border: 1px solid;
+  transition: all 0.4s;
 }
 
 #tour-section .show .show-link:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 #tour-section .past-shows-list h4 {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #tour-section .past-shows-list .past-show {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #tour-section .past-show span:first-child {
-    text-transform: capitalize;
-    width: 55px;
+  text-transform: capitalize;
+  width: 55px;
 }
 
 #tour-section .past-show span:nth-child(2) {
-    color: #9c2685;
+  color: #9c2685;
 }
 
 #tour-section .past-show span:last-child {
-    font-style: italic;
-    margin-left: 3px;
+  font-style: italic;
+  margin-left: 3px;
 }
 
 #tour-section .past-show span:nth-child(2):after,
 #tour-section .past-show span:nth-child(2):before {
-    content: ' - ';
-    color: white;
+  content: ' - ';
+  color: white;
 }
 
 
 /*--------------MUSIC PAGE-------------------*/
 
 .album {
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 .album h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .album iframe {
-    max-width: 100%;
-    transition: all 0.3s;
-    border-radius: 8px;
+  max-width: 100%;
+  transition: all 0.3s;
+  border-radius: 8px;
 }
 
 .album .year {
-    color: #cab782;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1.6rem;
+  color: #cab782;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.6rem;
 }
 
 .cover .info-click {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 100px);
-    opacity: 0;
-    font-style: italic;
-    cursor: default;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 100px);
+  opacity: 0;
+  font-style: italic;
+  cursor: default;
 }
 
 .record-info {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #868686c4;
-    /*background-color: rgba(0, 0, 0, 0.7);*/
-    z-index: 100;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #868686c4;
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+  z-index: 100;
 }
 
 .record-info img {
-    max-width: 550px;
-    margin-right: 50px;
+  max-width: 550px;
+  margin-right: 50px;
 }
 
 .record-info ul {
-    background-color: #111;
-    border: 1px solid #ffffff73;
-    text-align: left;
-    border-radius: 8px;
-    padding: 0 10px;
-    align-self: start;
+  background-color: #111;
+  border: 1px solid #ffffff73;
+  text-align: left;
+  border-radius: 8px;
+  padding: 0 10px;
+  align-self: start;
 }
 
 .record-info h2 {
-    margin: 10px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 .record-info li:not(:first-child) {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .record-info li span {
-    font-style: italic;
-    font-weight: bold;
-    margin-right: 5px;
-    color: #cab782;
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #cab782;
 }
 
 .record-info a {
-    font-style: italic;
-    text-decoration: underline;
-    color: #cab782;
+  font-style: italic;
+  text-decoration: underline;
+  color: #cab782;
 }
 
 /*--------------VIDEO PAGE-------------------*/
 
 /* Astuce pour rendre les iframe youtube responsive */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
 }
 
 .video-container iframe,
 .video-container object,
 .video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* fin astuce */
 
 #video > span {
-    font-style: italic;
+  font-style: italic;
 }
 
 #video > span > a {
-    font-style: normal;
-    margin-left: 2px;
+  font-style: normal;
+  margin-left: 2px;
 }
 
 .video-container {
-    border: 1px solid #ffffff73;
-    border-radius: 8px;
+  border: 1px solid #ffffff73;
+  border-radius: 8px;
 }
 
 .clip {
-    margin: 40px auto 50px auto;
-    max-width: 900px;
+  margin: 40px auto 50px auto;
+  max-width: 900px;
 }
 
 .clip h3 {
-    color: #cab782;
+  color: #cab782;
 }
 
 /*--------------MERCH PAGE-------------------*/
 
 #categories ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .category a:hover {
-    color: #9c2685;
+  color: #9c2685;
 }
 
 .category:not(:last-of-type):after {
-    content: '-';
-    margin: 0 10px;
+  content: '-';
+  margin: 0 10px;
 }
 
 .item {
-    margin-top: 40px;
-    position: relative;
-}
-
-.item h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.8rem;
+  margin-top: 40px;
+  position: relative;
 }
 
 .item img {
-    background-color: #7b7b7b;
+  transition: all 0.2s;
+}
+
+.item h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.8rem;
+}
+
+.item img {
+  background-color: #7b7b7b;
 }
 
 .status::before {
-    content: '-';
-    margin: 0 5px;
+  content: '-';
+  margin: 0 5px;
 }
 
 .status {
-    font-style: italic;
-    color: #cab782;
+  font-style: italic;
+  color: #cab782;
 }
 
 .item aside {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    background-color: hsl(0, 0%, 21%);
-    padding: 6px 15px;
-    line-height: 1.4;
-    border: 1px solid #ffffff73;
-    border-radius: 4px;
-    box-shadow: 0 0 3px 0 white;
-    z-index: 100;
-    display: none;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: hsl(0, 0%, 21%);
+  padding: 6px 15px;
+  line-height: 1.4;
+  border: 1px solid #ffffff73;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 white;
+  z-index: 100;
+  display: none;
 }
 
 .item aside p {
-    font-style: italic;
-    text-decoration: underline;
-    margin: 0 0 5px 0;
+  font-style: italic;
+  text-decoration: underline;
+  margin: 0 0 5px 0;
 }
 
 .item aside span:not(:last-of-type):after {
-    content: ' - ';
+  content: ' - ';
 }
 
 /*--------------CONTACT PAGE-------------------*/
 
 #contact h3 {
-    font-size: 2.2rem;
-    color: #cab782;
+  font-size: 2.2rem;
+  color: #cab782;
 }
 
 #contact article {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #contact ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #contact ul li {
-    width: 50%;
-    margin: 10px 0;
+  width: 50%;
+  margin: 10px 0;
 }
 
 #contact a {
-    text-decoration: underline;
-    color: #9c2685;
+  text-decoration: underline;
+  color: #9c2685;
 }
 
 #contact .information {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #contact ul li:hover {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 /*---------------------RESPONSIVE---------------------*/
 
-
-/****** Mobile Only ******/
-
-@media (max-width: 767px) {
-    /** NEWS PAGE **/
-    #news-section h1 {
-        margin-bottom: 0;
-    }
-
-    .news {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .news .title {
-        order: -1;
-    }
-
-    .news iframe {
-        width: 100%;
-    }
-
-    #article h1 {
-        margin-bottom: 10px;
-    }
-}
-
 /****** Tablet breakpoint ******/
 
 @media (min-width: 768px) {
-    #main-wrapper {
-        margin: 200px 30px 20px 30px;
-    }
+  #main-wrapper {
+    margin: 200px 20px 20px 20px;
+  }
 
-    /** NEWS PAGE **/
-    .news .image {
-        max-width: 40%;
-        float: left;
-        margin-right: 30px;
-    }
+  /** BAND PAGE **/
+  #members {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    .news:nth-child(odd) .image {
-        float: right;
-        margin: 0 0 0 30px
-    }
+  /** TOUR PAGE **/
+  #tour-section .show .show-info {
+    display: flex;
+    align-items: center;
+  }
 
-    /** ARTICLE PAGE **/
-    #article img {
-        max-width: 40%;
-    }
+  #tour-section .show .show-date {
+    width: 25%;
+  }
 
-    #article > img {
-        float: left;
-        margin-right: 15px;
-    }
+  #tour-section .show .show-info .venue {
+    margin-bottom: 0;
+    width: 45%;
+    padding: 0 10px;
+  }
 
-    #article iframe {
-        margin-top: 30px;
-    }
+  #tour-section .past-shows-list .past-show {
+    justify-content: center;
+  }
 
-    /** BAND PAGE **/
-    #members {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  /** MUSIC PAGE **/
+  #disco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-    /** TOUR PAGE **/
-    #tour-section .show .show-info {
-        display: flex;
-        align-items: center;
-    }
+  .album {
+    width: calc(50% - 30px);
+    max-width: 400px;
+  }
 
-    #tour-section .show .show-date {
-        width: 25%;
-    }
+  /** VIDEO PAGE **/
+  .clip h3 {
+  }
 
-    #tour-section .show .show-info .venue {
-        margin-bottom: 0;
-        width: 45%;
-        padding: 0 10px;
-    }
+  /** MERCH PAGE **/
+  #items ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+  }
 
-    #tour-section .past-shows-list .past-show {
-        justify-content: center;
-    }
+  .item {
+    width: 33.33%;
+  }
 
-    /** MUSIC PAGE **/
-    #disco {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
+  .item:hover aside {
+    display: block;
+    -webkit-animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+  }
 
-    .album {
-        width: calc(50% - 30px);
-        max-width: 400px;
-    }
+  /** CONTACT PAGE **/
+  #contact .information-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    /** VIDEO PAGE **/
-    .clip h3 {
-    }
+  #contact .booking {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-    /** MERCH PAGE **/
-    #items ul {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: center;
-    }
+  #contact h3 {
+    width: 100%;
+  }
 
-    .item {
-        width: 33.33%;
-    }
-
-    .item:hover aside {
-        display: block;
-        -webkit-animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-        animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-    }
-
-    /** CONTACT PAGE **/
-    #contact .information-wrapper {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    #contact .booking {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    #contact h3 {
-        width: 100%;
-    }
-
-    #contact ul li {
-        width: inherit;
-    }
+  #contact ul li {
+    width: inherit;
+  }
 }
 
 /****** Desktop Breakpoint ******/
 
 @media (min-width: 1024px) {
-    #main-wrapper {
-        margin: 0 auto 20px auto;
-        padding: 0;
-        max-width: 80%;
-    }
+  #main-wrapper {
+    margin: 0 7% 20px 7%;
+  }
 
-    /** BAND PAGE **/
-    #members {
-        justify-content: start;
-    }
+  /** BAND PAGE **/
+  #members {
+    justify-content: start;
+  }
 
-    .member {
-        margin-right: 50px;
-    }
+  .member {
+    margin-right: 50px;
+  }
 
-    #members-identification {
-        position: relative;
-    }
+  #members-identification {
+    position: relative;
+  }
 
-    .member-face {
-        background-color: transparent;
-        position: absolute;
-        z-index: 20;
-    }
+  .member-face {
+    background-color: transparent;
+    position: absolute;
+    z-index: 20;
+  }
 
-    #jambon {
-        width: 12%;
-        height: 22%;
-        top: 36%;
-        left: 26%;
-    }
+  #jambon {
+    width: 12%;
+    height: 22%;
+    top: 36%;
+    left: 26%;
+  }
 
-    #arno {
-        width: 10%;
-        height: 22%;
-        top: 22%;
-        left: 38%;
-    }
+  #arno {
+    width: 10%;
+    height: 22%;
+    top: 22%;
+    left: 38%;
+  }
 
-    #lox {
-        width: 11%;
-        height: 26%;
-        top: 25%;
-        left: 55%;
-    }
+  #lox {
+    width: 11%;
+    height: 26%;
+    top: 25%;
+    left: 55%;
+  }
 
-    #mike {
-        width: 12%;
-        height: 28%;
-        top: 25%;
-        left: 73%;
-    }
+  #mike {
+    width: 12%;
+    height: 28%;
+    top: 25%;
+    left: 73%;
+  }
 
-    /** MUSIC PAGE **/
-    #disco {
-        justify-content: space-between;
-    }
+  /** MUSIC PAGE **/
+  #disco {
+    justify-content: space-between;
+  }
 
-    .album {
-        width: calc(33.33% - 30px);
-        max-width: 450px;
-    }
+  .album {
+    width: calc(33.33% - 30px);
+    max-width: 450px;
+  }
 
-    .album:nth-child(4) {
-        margin-left: 16.66%;
-    }
+  .album:nth-child(4) {
+    margin-left: 16.66%;
+  }
 
-    .album:last-child {
-        margin-right: 16.66%;
-    }
+  .album:last-child {
+    margin-right: 16.66%;
+  }
 
-    .cover {
-        position: relative;
-        margin: 0;
-    }
+  .cover {
+    position: relative;
+    margin: 0;
+  }
 
-    .cover:hover > img {
-        filter: grayscale(0.3);
-        opacity: 0.5;
-    }
+  .cover:hover > img {
+    filter: grayscale(0.3);
+    opacity: 0.5;
+  }
 
-    .cover .info-click {
-        display: block;
-    }
+  .cover .info-click {
+    display: block;
+  }
 
-    .cover:hover .info-click {
-        opacity: 1;
-        z-index: 50;
-    }
+  .cover:hover .info-click {
+    opacity: 1;
+    z-index: 50;
+  }
 
-    .record-info.active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .record-info.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .record-info.active .container {
-        display: flex;
-    }
+  .record-info.active .container {
+    display: flex;
+  }
 
-    html.scroll-off {
-        overflow-y: hidden;
-    }
+  html.scroll-off {
+    overflow-y: hidden;
+  }
 }
 
 @media (min-width: 1500px) {
-    .record-info img {
-        max-width: 700px;
-    }
+  .record-info img {
+    max-width: 700px;
+  }
 }

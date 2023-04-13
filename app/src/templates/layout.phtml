@@ -9,11 +9,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="canonical" href="<?= $canonicalUrl ?>">
   <!--Favicons-->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=8jMYrOngOg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png?v=8jMYrOngOg">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png?v=8jMYrOngOg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest?v=8jMYrOngOg">
-  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg?v=8jMYrOngOg" color="#8a0f2c">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="assets/favicon/favicon.ico?v=8jMYrOngOg">
   <meta name="apple-mobile-web-app-title" content="Eight Sins">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,9 @@
         content="Thrash Metal Hardcore band from France (Grenoble). Tour dates, last news, music, videos here !!"/>
   <meta property="og:image" content="https://www.eightsins.fr/assets/images/8sinsbackground.jpg">
   <!--Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css?family=Kalam:300|Source+Sans+Pro:300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <?php if (getenv('ENV') === 'dev'): ?>
     <link rel="stylesheet" href="../src/css/normalize.css">
     <link rel="stylesheet" href="../src/css/global-settings.css">
@@ -71,14 +73,16 @@
   </nav>
 </header>
 <main id="main-wrapper">
-  <?php include "$template.phtml" ?>
+  <div id="content-wrapper">
+    <?php include "$template.phtml" ?>
+  </div>
   <div id="scroll-to-top-button"><i class="fas fa-arrow-up"></i></div>
 </main>
 <footer>
   <nav class="social-nav">
     <a href="https://facebook.com/eightsins" target="_blank" rel="noopener"><i
         class="fab fa-facebook-square font-icon"></i></a>
-    <a href="https://instagram.com/eightsinshxc" target="_blank" rel="noopener"><i
+    <a href="https://instagram.com/eightsinsband" target="_blank" rel="noopener"><i
         class="fab fa-instagram font-icon"></i></a>
     <a href="https://twitter.com/eightsins" target="_blank" rel="noopener"><i class="fab fa-twitter font-icon"></i></a>
     <a href="https://www.youtube.com/channel/UCqKTbXI3Ycq9Ij-bKVi7tRQ" target="_blank" rel="noopener">

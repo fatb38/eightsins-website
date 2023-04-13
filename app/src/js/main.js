@@ -26,23 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'music':
       new DiscographyInformations().run()
       break
-    case 'news':
-      // Troncate the news content with number of chars depending on window width
-      const newsContent = document.querySelectorAll('.news .content')
-      let width = 100
-      if (window.outerWidth > 767) {
-        width = 350
-      }
-      newsContent.forEach(news => {
-        news.innerHTML = mbStrimwidth(news.innerText, 0, width, '(...)')
-      })
-      break
     case 'article':
       // make the iframe dimensions responsive under 500px viewport width
       const iframe = document.querySelector('iframe')
-      let windowWidth = window.outerWidth
+      const windowWidth = window.outerWidth
       if (iframe && windowWidth <= 500) {
-        windowWidth -= 30 // to implement 15px margin on each side
         iframe.width = windowWidth.toString()
         iframe.height = (parseInt(iframe.width) / 1.78).toString()
       }
