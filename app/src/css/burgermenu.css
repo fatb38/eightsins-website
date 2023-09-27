@@ -80,11 +80,11 @@
 }
 
 .menu-link a:hover {
-    color: #9c2685;
+    color: var(--primary-color);
 }
 
 .menu-link a.active-tab {
-    color: #9c2685;
+    color: var(--primary-color);
 }
 
 

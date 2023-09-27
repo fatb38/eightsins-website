@@ -1,5 +1,5 @@
 <?php
-setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');
+setlocale(LC_TIME, 'fr_FR.utf8');
 include '../src/config/env.php';
 include '../src/config/Database.php';
 $database = new Database();

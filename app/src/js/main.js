@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'band':
       new MembersIdentificator().run()
       break
-    case 'merch':
-      new MerchPage().run()
-      break
     case 'music':
       new DiscographyInformations().run()
       break

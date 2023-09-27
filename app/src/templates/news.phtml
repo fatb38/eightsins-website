@@ -1,23 +1,23 @@
 <section id="news-section">
-  <h1>EIGHT SINS NEWS</h1>
-    <div id="news-wrapper">
-      <?php foreach ($allNews as $news): ?>
-        <article id="<?= $news['id'] ?>" class="news" data-id="<?= $news['id'] ?>">
-          <div class="title">
-              <span class="date"><?= strftime("%d %B %Y", date_timestamp_get(date_create($news['created_at']))); ?></span>
-              <h3><?= htmlspecialchars($news['title']) ?></h3>
-          </div>
-          <div class="image">
-              <a href="article.php?newsid=<?= $news['id'] ?>">
-                <img
-                  src="assets/images/news/<?= htmlspecialchars($news['image']) ?>"
-                  alt="<?= htmlspecialchars($news['title']) ?>"
-                  title="<?= htmlspecialchars($news['title']) ?>"
-                >
-              </a>
-          </div>
-          <hr>
-        </article>
-      <?php endforeach ?>
-    </div>
+  <h1>NEWS</h1>
+  <div id="news-wrapper">
+    <?php foreach ($allNews as $news): ?>
+      <article id="<?= $news['id'] ?>" class="news" data-id="<?= $news['id'] ?>">
+        <div class="title">
+          <span class="date"><?= strftime("%d %B %Y", date_timestamp_get(date_create($news['created_at']))); ?></span>
+          <h3><?= htmlspecialchars($news['title']) ?></h3>
+        </div>
+        <div class="image">
+          <a href="article.php?newsid=<?= $news['id'] ?>">
+            <img
+              src="https://eightsins.fr/assets/images/news/<?= htmlspecialchars($news['image']) ?>"
+              alt="<?= htmlspecialchars($news['title']) ?>"
+              title="<?= htmlspecialchars($news['title']) ?>"
+            >
+          </a>
+        </div>
+        <hr>
+      </article>
+    <?php endforeach ?>
+  </div>
 </section>

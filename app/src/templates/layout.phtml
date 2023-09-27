@@ -33,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <?php if (getenv('ENV') === 'dev'): ?>
     <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/variables.css">
     <link rel="stylesheet" href="../src/css/global-settings.css">
     <link rel="stylesheet" href="../src/css/animations.css">
     <link rel="stylesheet" href="../src/css/burgermenu.css">
@@ -44,6 +45,15 @@
   <?php if ($template === 'welcome'): ?>
     <?= '<link rel="stylesheet" href="assets/css/welcome-page.css">' ?>
   <?php endif ?>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0T89NZHR69"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0T89NZHR69');
+  </script>
 </head>
 <body>
 <header>
@@ -55,7 +65,7 @@
         <div class="burger-menu-icon bottom-line"></div>
       </li>
       <li id="main-logo">
-        <a href="index.php"><img src="assets/images/logoHD.png" alt="EIGHT SINS" title="EIGHT SINS"></a>
+        <a href="index.php"><img src="assets/images/logo2023jauneHD.png" alt="EIGHT SINS" title="EIGHT SINS"></a>
       </li>
       <li class="menu-list">
         <ul>
@@ -80,27 +90,33 @@
 </main>
 <footer>
   <nav class="social-nav">
-    <a href="https://facebook.com/eightsins" target="_blank" rel="noopener"><i
-        class="fab fa-facebook-square font-icon"></i></a>
-    <a href="https://instagram.com/eightsinsband" target="_blank" rel="noopener"><i
-        class="fab fa-instagram font-icon"></i></a>
-    <a href="https://twitter.com/eightsins" target="_blank" rel="noopener"><i class="fab fa-twitter font-icon"></i></a>
+    <a href="https://facebook.com/eightsins" target="_blank" rel="noopener">
+      <i class="fa-brands fa-facebook font-icon"></i>
+    </a>
+    <a href="https://instagram.com/eightsinsband" target="_blank" rel="noopener">
+      <i class="fa-brands fa-instagram font-icon"></i>
+    </a>
+    <a href="https://open.spotify.com/artist/5M7auDu0v1IOATDBxQVfIM" target="_blank" rel="noopener">
+      <i class="fa-brands fa-spotify font-icon"></i>
+    </a>
     <a href="https://www.youtube.com/channel/UCqKTbXI3Ycq9Ij-bKVi7tRQ" target="_blank" rel="noopener">
-      <i class="fab fa-youtube font-icon"></i>
+      <i class="fa-brands fa-youtube font-icon"></i>
+    </a>
+    <a href="https://eightsins.bandcamp.com" target="_blank" rel="noopener">
+      <i class="fa-brands fa-bandcamp font-icon"></i>
     </a>
   </nav>
   <p class="credits">Eight Sins <?= date_format(date_create('now'), 'Y') ?> © - All Rights Reserved.</p>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <?php if (getenv('ENV') === 'dev'): ?>
   <script src="../src/js/utilities.js"></script>
   <script src="../src/js/Classes/DiscographyInformations.js"></script>
   <script src="../src/js/Classes/BurgerMenu.js"></script>
   <script src="../src/js/Classes/MembersIdentificator.js"></script>
-  <script src="../src/js/Classes/MerchPage.js"></script>
   <script src="../src/js/main.js"></script>
 <?php else: ?>
   <script src="assets/js/main.min.js"></script>
 <?php endif ?>
+<script src="https://kit.fontawesome.com/c2029d4d27.js" crossorigin="anonymous"></script>
 </body>
 </html>

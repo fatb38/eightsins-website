@@ -53,11 +53,11 @@ window.onscroll = controlScrollToTopButton
 function controlScrollToTopButton () {
   const windowInnerHeight = window.innerHeight
   if (
-    body.scrollTop > windowInnerHeight ||
-    html.scrollTop > windowInnerHeight
+    body?.scrollTop > windowInnerHeight ||
+    html?.scrollTop > windowInnerHeight
   ) {
     scrollToTopButton.classList.add('show')
   } else {
-    scrollToTopButton.classList.remove('show')
+    scrollToTopButton?.classList.remove('show')
   }
 }

@@ -7,21 +7,16 @@ class MembersIdentificator {
       mike: document.getElementById('mike')
     }
     this.images = {
-      classic: document.getElementById('classic-band'),
-      glam: document.getElementById('glam-band')
+      classic: document.getElementById('classic-band')
     }
   }
 
   onMouseEnter (member) {
     document.querySelector(`#${member}-text`).classList.add('hover-face')
-    this.images.classic.classList.add('hide')
-    this.images.glam.classList.remove('hide')
   }
 
   onMouseLeave (member) {
     document.querySelector(`#${member}-text`).classList.remove('hover-face')
-    this.images.glam.classList.add('hide')
-    this.images.classic.classList.remove('hide')
   }
 
   run () {

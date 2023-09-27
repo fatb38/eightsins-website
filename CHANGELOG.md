@@ -1,5 +1,33 @@
 # EIGHT SINS OFFICIAL WEBSITE
 
+## v1.8.0 - 2023-09-25
+### New feature
+- Adding new video clip Acid Hole
+- Adding Spotify and Bandcamp icon, removing twitter
+- Improving music page with Bandcamp integration
+- New biography
+- New logo and color design
+- Few CSS enhancements
+
+## v1.7.1 - 2023-09-06
+### Fixes
+- New under construction page for merch
+
+## v1.7.0 - 2023-07-17
+### New feature
+- Adding Victory vision agency in contact
+- New main color (for accessibility)
+- Get news images url from production url (stop duplicating images)
+- Removing epic tour in contact
+### Bug Fixes
+- Admin news list : removing content column
+- Admin scss compilation with grunt failed
+- Iframe error on article page
+- Scroll button console error
+
+## v1.6.1 - 2023-05-09
+- Fix CSS for past tour dates
+
 ## v1.6.0 - 2023-01-22
 - New CSS for news page 
 - Fix article page CSS

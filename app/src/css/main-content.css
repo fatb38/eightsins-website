@@ -66,10 +66,11 @@
 }
 
 .title h3 {
-  color: #cab782;
+  color: var(--primary-color);
   margin-bottom: 10px;
   margin-top: 0;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
+  font-weight: 300;
 }
 
 .news .date:after, .news .date:before {
@@ -136,9 +137,10 @@
   margin-block: 24px;
 }
 
-#article a {
+#article a:not(.button-link) {
   font-style: italic;
-  color: #cab782;
+  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 #article .back-link {
@@ -147,7 +149,7 @@
 }
 
 #article h1 {
-  color: #cab782;
+  color: var(--primary-color);
   font-family: inherit;
   font-size: 3rem;
   font-weight: 300;
@@ -164,6 +166,12 @@
   content: ' - ';
 }
 
+#article .iframe-video {
+  border: 1px solid #ffffff73;
+  border-radius: 12px;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   #article {
     max-width: 1200px;
@@ -176,7 +184,7 @@
 
   #article-content-wrapper img {
     max-width: 400px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   #article-content-wrapper .content {
@@ -215,7 +223,7 @@
 
 .member span {
   font-style: italic;
-  color: #cab782;
+  color: var(--primary-color);
 }
 
 #biography {
@@ -236,7 +244,7 @@
   display: block;
   left: 50%;
   position: relative;
-  border-bottom: 2px solid #cab782;
+  border-bottom: 2px solid var(--primary-color);
   transform: translateY(2px);
   border-radius: 2px;
 }
@@ -258,9 +266,8 @@
 }
 
 #tour-section h3 {
-  color: #cab782;
+  color: var(--primary-color);
   margin-bottom: 30px;
-  font-weight: lighter;
 }
 
 #tour-section .show {
@@ -280,13 +287,9 @@
   margin-bottom: 10px;
 }
 
-#tour-section .show .show-info .venue {
-  color: #9c2685;
-  font-weight: bold;
-}
-
 #tour-section .show .show-info .venue .venue-name {
   font-size: 18px;
+  color: var(--primary-color)
 }
 
 #tour-section .show .show-info .lineup {
@@ -309,35 +312,34 @@
   color: black;
 }
 
-#tour-section .past-shows-list h4 {
+#tour-section h4 {
   margin-bottom: 5px;
 }
 
-#tour-section .past-shows-list .past-show {
+#tour-section .past-shows-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-#tour-section .past-show span:first-child {
+#tour-section .past-show .show-date {
   text-transform: capitalize;
-  width: 55px;
+  width: 75px;
+  font-size: 14px;
 }
 
-#tour-section .past-show span:nth-child(2) {
-  color: #9c2685;
+#tour-section .past-show .venue-name {
+  color: var(--primary-color);
 }
 
-#tour-section .past-show span:last-child {
+#tour-section .past-show .venue-city {
   font-style: italic;
-  margin-left: 3px;
 }
 
-#tour-section .past-show span:nth-child(2):after,
-#tour-section .past-show span:nth-child(2):before {
-  content: ' - ';
-  color: white;
+@media (max-width: 767px) {
+  #tour-section .past-show {
+    text-align: start;
+  }
 }
-
 
 /*--------------MUSIC PAGE-------------------*/
 
@@ -347,76 +349,20 @@
 
 .album h3 {
   font-size: 2rem;
+  color: var(--primary-color);
 }
 
 .album iframe {
   max-width: 100%;
   transition: all 0.3s;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .album .year {
-  color: #cab782;
+  color: white;
   font-weight: normal;
   font-style: italic;
-  font-size: 1.6rem;
-}
-
-.cover .info-click {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: calc(50% - 100px);
-  opacity: 0;
-  font-style: italic;
-  cursor: default;
-}
-
-.record-info {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #868686c4;
-  /*background-color: rgba(0, 0, 0, 0.7);*/
-  z-index: 100;
-}
-
-.record-info img {
-  max-width: 550px;
-  margin-right: 50px;
-}
-
-.record-info ul {
-  background-color: #111;
-  border: 1px solid #ffffff73;
-  text-align: left;
-  border-radius: 8px;
-  padding: 0 10px;
-  align-self: start;
-}
-
-.record-info h2 {
-  margin: 10px 0 20px 0;
-}
-
-.record-info li:not(:first-child) {
-  margin-bottom: 20px;
-}
-
-.record-info li span {
-  font-style: italic;
-  font-weight: bold;
-  margin-right: 5px;
-  color: #cab782;
-}
-
-.record-info a {
-  font-style: italic;
-  text-decoration: underline;
-  color: #cab782;
+  font-size: 1.8rem;
 }
 
 /*--------------VIDEO PAGE-------------------*/
@@ -451,94 +397,34 @@
   margin-left: 2px;
 }
 
+#video .wrapper {
+  margin-bottom: 16px;
+}
+
 .video-container {
   border: 1px solid #ffffff73;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .clip {
-  margin: 40px auto 50px auto;
+  margin-bottom: 24px;
   max-width: 900px;
 }
 
 .clip h3 {
-  color: #cab782;
+  color: var(--primary-color);
 }
 
-/*--------------MERCH PAGE-------------------*/
-
-#categories ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.category a:hover {
-  color: #9c2685;
-}
-
-.category:not(:last-of-type):after {
-  content: '-';
-  margin: 0 10px;
-}
-
-.item {
-  margin-top: 40px;
-  position: relative;
-}
-
-.item img {
-  transition: all 0.2s;
-}
-
-.item h3 {
-  margin: 10px 0 5px 0;
+.clip h3 span {
+  color: white;
+  font-style: italic;
   font-size: 1.8rem;
-}
-
-.item img {
-  background-color: #7b7b7b;
-}
-
-.status::before {
-  content: '-';
-  margin: 0 5px;
-}
-
-.status {
-  font-style: italic;
-  color: #cab782;
-}
-
-.item aside {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  background-color: hsl(0, 0%, 21%);
-  padding: 6px 15px;
-  line-height: 1.4;
-  border: 1px solid #ffffff73;
-  border-radius: 4px;
-  box-shadow: 0 0 3px 0 white;
-  z-index: 100;
-  display: none;
-}
-
-.item aside p {
-  font-style: italic;
-  text-decoration: underline;
-  margin: 0 0 5px 0;
-}
-
-.item aside span:not(:last-of-type):after {
-  content: ' - ';
 }
 
 /*--------------CONTACT PAGE-------------------*/
 
 #contact h3 {
   font-size: 2.2rem;
-  color: #cab782;
 }
 
 #contact article {
@@ -548,7 +434,7 @@
 #contact ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -559,7 +445,7 @@
 
 #contact a {
   text-decoration: underline;
-  color: #9c2685;
+  color: var(--primary-color);
 }
 
 #contact .information {
@@ -580,6 +466,10 @@
   }
 
   /** BAND PAGE **/
+  #classic-band img {
+    width: 100%;
+  }
+
   #members {
     flex-direction: row;
     justify-content: space-between;
@@ -601,42 +491,17 @@
     padding: 0 10px;
   }
 
-  #tour-section .past-shows-list .past-show {
-    justify-content: center;
-  }
-
   /** MUSIC PAGE **/
   #disco {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 30px;
+    justify-content: center;
   }
 
   .album {
     width: calc(50% - 30px);
     max-width: 400px;
-  }
-
-  /** VIDEO PAGE **/
-  .clip h3 {
-  }
-
-  /** MERCH PAGE **/
-  #items ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
-  }
-
-  .item {
-    width: 33.33%;
-  }
-
-  .item:hover aside {
-    display: block;
-    -webkit-animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-    animation: scale-in-center 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
   }
 
   /** CONTACT PAGE **/
@@ -645,14 +510,12 @@
     justify-content: space-evenly;
   }
 
-  #contact .booking {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   #contact h3 {
     width: 100%;
+  }
+
+  #contact ul {
+    gap: 80px;
   }
 
   #contact ul li {
@@ -687,82 +550,53 @@
   }
 
   #jambon {
-    width: 12%;
-    height: 22%;
-    top: 36%;
-    left: 26%;
+    width: 11%;
+    height: 20%;
+    top: 10%;
+    left: 17%;
   }
 
   #arno {
-    width: 10%;
-    height: 22%;
-    top: 22%;
-    left: 38%;
+    width: 14%;
+    height: 30%;
+    top: 4%;
+    left: 62%;
   }
 
   #lox {
-    width: 11%;
-    height: 26%;
-    top: 25%;
-    left: 55%;
+    width: 8%;
+    height: 15%;
+    top: 16%;
+    left: 42%;
   }
 
   #mike {
-    width: 12%;
-    height: 28%;
-    top: 25%;
-    left: 73%;
+    width: 10%;
+    height: 19%;
+    top: 36%;
+    left: 30%;
   }
 
   /** MUSIC PAGE **/
-  #disco {
-    justify-content: space-between;
-  }
-
   .album {
     width: calc(33.33% - 30px);
-    max-width: 450px;
-  }
-
-  .album:nth-child(4) {
-    margin-left: 16.66%;
-  }
-
-  .album:last-child {
-    margin-right: 16.66%;
-  }
-
-  .cover {
-    position: relative;
-    margin: 0;
-  }
-
-  .cover:hover > img {
-    filter: grayscale(0.3);
-    opacity: 0.5;
-  }
-
-  .cover .info-click {
-    display: block;
-  }
-
-  .cover:hover .info-click {
-    opacity: 1;
-    z-index: 50;
-  }
-
-  .record-info.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .record-info.active .container {
-    display: flex;
   }
 
   html.scroll-off {
     overflow-y: hidden;
+  }
+
+  /** VIDEO PAGE **/
+  #video .wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #video .wrapper .clip {
+    width: calc(50% - 20px);
   }
 }
 

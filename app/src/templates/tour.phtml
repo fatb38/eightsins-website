@@ -1,45 +1,47 @@
 <section id="tour-section">
-    <h1>EIGHT SINS TOUR DATE</h1>
-    <article>
-        <h3>UPCOMING SHOWS</h3>
-        <?php if (empty($upcomingDates)): ?>
-            <span style="font-style: italic">No upcoming shows...</span>
-        <?php endif ?>
-        <?php foreach ($upcomingDates as $date): ?>
-            <div class="show">
-                <div class="show-info">
-                    <div class="show-date"><?= strftime("%a %d %B", date_timestamp_get(date_create($date->datetime))) ?></div>
-                    <div class="venue">
-                        <span class="venue-name"><?= $date->venue->name ?></span>
-                        <?php if (count($date->lineup) > 1): ?>
-                            <br><span class="lineup">w/
-                            <?php for ($index = 1; $index < count($date->lineup); $index++): ?>
-                                <?= $date->lineup[$index] ?><?= $index + 1 == count($date->lineup) ? null : ',' ?>
-                            <?php endfor ?>
-                            </span>
-                        <?php endif ?>
-                    </div>
-                    <div><?= $date->venue->city ?>, <?= $date->venue->country ?></div>
-                </div>
-                <div class="show-link">
-                    <a href="<?= $date->url ?>">More info</a>
-                </div>
-            </div>
-        <?php endforeach ?>
-    </article>
-    <article class="past-shows-list">
-        <h3>PAST SHOWS</h3>
-        <?php foreach ($pastDates as $date): ?>
-            <?php if($currentYear === getYear($date->datetime)): ?>
-                <h4><?= $currentYear ?></h4>
-                <?php $currentYear-- ?>
+  <h1>TOUR DATES</h1>
+  <article>
+    <h3>UPCOMING SHOWS</h3>
+    <?php if (empty($upcomingDates)): ?>
+      <span style="font-style: italic">No upcoming shows...</span>
+    <?php endif ?>
+    <?php foreach ($upcomingDates as $date): ?>
+      <div class="show">
+        <div class="show-info">
+          <div class="show-date"><?= strftime("%a %d %B", date_timestamp_get(date_create($date->datetime))) ?></div>
+          <div class="venue">
+            <span class="venue-name"><?= $date->venue->name ?></span>
+            <?php if (count($date->lineup) > 1): ?>
+              <br>
+              <span class="lineup">w/
+                <?php for ($index = 1; $index < count($date->lineup); $index++): ?>
+                  <?= $date->lineup[$index] ?><?= $index + 1 == count($date->lineup) ? null : ',' ?>
+                <?php endfor ?>
+              </span>
             <?php endif ?>
-            <span class="past-show">
-                <span><?= strftime("%d %b", date_timestamp_get(date_create($date->datetime))) ?></span>
-                <span><?= $date->venue->name ?></span>
-                <span><?= $date->venue->city ?>, <?= $date->venue->country ?></span>
-            </span>
-        <?php endforeach ?>
-        <p class="italic">And more dates since 2006...</p>
-    </article>
+          </div>
+          <div><?= $date->venue->city ?>, <?= $date->venue->country ?></div>
+        </div>
+        <div class="show-link">
+          <a href="<?= $date->url ?>">More info</a>
+        </div>
+      </div>
+    <?php endforeach ?>
+  </article>
+  <article>
+    <h3>PAST SHOWS</h3>
+    <div class="past-shows-list">
+      <?php foreach ($pastDates as $date): ?>
+        <?php if ($currentYear === getYear($date->datetime)): ?>
+          <h4><?= $currentYear ?></h4>
+          <?php $currentYear-- ?>
+        <?php endif ?>
+        <div class="past-show">
+          <span class="show-date"><?= strftime("%d %b", date_timestamp_get(date_create($date->datetime))) ?></span> -
+          <span class="venue-name"><?= $date->venue->name ?></span> - <span class="venue-city"><?= $date->venue->city ?> (<?= substr($date->venue->country, 0, 3) ?>)</span>
+        </div>
+      <?php endforeach ?>
+      <p class="italic">And more dates since 2006...</p>
+    </div>
+  </article>
 </section>

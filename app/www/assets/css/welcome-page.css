@@ -30,7 +30,7 @@ h1 {
 }
 
 h1:hover {
-    color: #9c2685;
+    color: var(--primary-color);
     /*font-weight: bold;*/
     /*transform: scale(1.2);*/
     animation: shake 0.2s;

@@ -23,7 +23,7 @@ class BurgerMenu {
         if (tab === 'index') {
           return
         }
-        link.style.color = '#9c2685'
+        link.style.color = 'var(--primary-color)'
       }
     })
   }

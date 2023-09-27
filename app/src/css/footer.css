@@ -13,7 +13,7 @@ footer::before {
 }
 
 .social-nav{
-    margin: 24px 0 10px 0;
+    margin: 16px 0;
 }
 
 .social-nav a {
@@ -26,7 +26,7 @@ footer::before {
 }
 
 .font-icon:hover {
-    color: #9c2685;
+    color: var(--primary-color);
 }
 
 .credits {

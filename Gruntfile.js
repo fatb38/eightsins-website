@@ -40,12 +40,12 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'app/admin-38/css/main.css': 'app/admin-38/css/main.scss'
+          'app/www/admin-38/css/main.css': 'app/www/admin-38/css/main.scss'
         }
       }
     },
     watch: {
-      files: ['app/src/css/*.css', 'app/src/js/*.js', 'app/admin-38/css/main.scss'],
+      files: ['app/src/css/*.css', 'app/src/js/*.js', 'app/www/admin-38/css/main.scss'],
       tasks: ['concat', 'babel', 'uglify', 'sass', 'cssmin']
     }
   })

@@ -5,16 +5,20 @@
   </div>
   <div id="article-content-wrapper">
     <img
-      src="assets/images/news/<?= htmlspecialchars($news['image']) ?>"
+      src="https://eightsins.fr/assets/images/news/<?= htmlspecialchars($news['image']) ?>"
       alt="<?= htmlspecialchars($news['title']) ?>"
       title="<?= htmlspecialchars($news['title']) ?>"
      />
     <div class="content">
       <?= ($news['content']) ?>
       <?php if ($news['iframe_link'] !== null): ?>
-          <iframe class="" width="560" height="315" src="<?= htmlspecialchars($news['iframe_link']) ?>" frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; Transparency"
-          />
+          <iframe
+            class="iframe-video"
+            height="315"
+            src="<?= htmlspecialchars($news['iframe_link']) ?>"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+            allowfullscreen
+          ></iframe>
       <?php endif ?>
     </div>
   </div>
